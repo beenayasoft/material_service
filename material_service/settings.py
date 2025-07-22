@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "material_app.middleware.TenantSchemaMiddleware",  # Multi-tenant middleware
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "corsheaders.middleware.CorsMiddleware",
@@ -90,6 +91,10 @@ DATABASES = {
         'PORT': os.getenv('DB_PORT'),
     }
 }
+
+DATABASE_ROUTERS = [
+    'material_app.routeurs.TenantSchemaRouter',
+]
 
 
 # Password validation

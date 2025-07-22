@@ -10,4 +10,5 @@ ipython
 reportlab
 psycopg2-binary
 psycopg
+django-tenants
 
